@@ -1,0 +1,93 @@
+﻿@model IEnumerable<egitim.Models.sinav>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layoutogrenci.cshtml";
+}
+
+<h1 class="profile-user-box card-box bg-custom">Konu Testi</h1>
+
+    <ol>
+
+        @{int i = 1; }
+
+        @foreach (var item in Model)
+        {
+           
+            <li class="card-box ribbon-box">
+                <h5 class="text-success">@Html.DisplayFor(model => item.soru)</h5>
+                @Html.HiddenFor(model => item.id)
+
+                <hr>
+                <div>
+                    <label class=" control-label">a)@Html.DisplayFor(model => item.a)</label>
+
+
+                </div>
+                <div>
+                    <label class="control-label">b)@Html.DisplayFor(model => item.b)</label>
+
+
+                </div>
+
+                <div>
+                    <label class="control-label">c)@Html.DisplayFor(model => item.c)</label>
+
+
+                </div>
+
+                <div>
+                    <label class="control-label">d)@Html.DisplayFor(model => item.d)</label>
+
+
+                </div>
+
+                <div>
+                    <label class=" control-label">e)@Html.DisplayFor(model => item.e)</label>
+
+
+                </div>
+                <div>
+                    <div class="col-md-1">
+                        <input type="text" class="cevap form-control" name="cevap"  data-id="@i-@Html.DisplayFor(model => item.cevap)" />
+                       
+                    </div>
+                </div>
+
+            </li>
+            i++;
+
+        }
+
+
+    </ol>
+    <div>
+       
+        <input type="submit" value="Sonucu Gönder" class="btn btn-default" />
+    </div>
+
+<script src="~/vertical/assets/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        
+        $("input").keyup(function () {
+            var ayar = $(this).attr("data-id");
+            var deger = ayar.split("-");
+            var sonuc = $(this).val();
+            if (deger[1] == sonuc) {
+                
+                $("input[data-id='"+deger[0]+'-'+deger[1]+"']").css("background-color", "yellow");
+            }
+            else {
+                $("input[data-id='" + deger[0] + '-' + deger[1] +"']").css("background-color", "red");
+            }
+
+
+
+
+        });
+
+    });
+
+
+</script>

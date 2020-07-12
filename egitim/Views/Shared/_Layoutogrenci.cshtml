@@ -1,0 +1,165 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Uzaktan Eğitim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- App favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+    <!-- App css -->
+    <link href="~/vertical/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/vertical/assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="~/vertical/assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/vertical/assets/css/style.css" rel="stylesheet" type="text/css" />
+
+    <script src="~/vertical/assets/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+<div class="left side-menu">
+
+    <div class="slimscroll-menu" id="remove-scroll">
+
+        <!-- LOGO -->
+        <div class="topbar-left">
+            <a href="../vertical/index.html" class="logo">
+                <span>
+                    <img src="../vertical/assets/images/logo.png" alt="" height="22">
+                </span>
+                <i>
+                    <img src="../vertical/assets/images/logo_sm.png" alt="" height="28">
+                </i>
+            </a>
+        </div>
+
+        <!-- User box -->
+        <div class="user-box">
+            <div class="user-img">
+                <img src="../vertical/assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme"
+                    class="rounded-circle img-fluid">
+            </div>
+            <h5><a href="#">Admin</a> </h5>
+            <p class="text-muted">Menü</p>
+        </div>
+
+        <!--- Sidemenu -->
+        <div id="sidebar-menu">
+
+            <ul class="metismenu" id="side-menu">
+
+                <!--<li class="menu-title">Navigation</li>-->
+
+                <li class="bg-primary">
+                    <a asp-controller="main" asp-action="index">
+                        <i class="fi-air-play"></i> <span> Anasayfa </span>
+                    </a>
+                </li>
+
+
+
+
+                <li class="bg-success">
+                    <a asp-controller="canlisogrenci" asp-action="Index">
+                        <i class="fi-air-play"></i> <span> Canlı Yayın </span>
+                    </a>
+                </li>
+                <li class="bg-success">
+                    <a asp-controller="konulars1" asp-action="liste">
+                        <i class="fi-air-play"></i> <span> Alınan Dersler </span>
+                    </a>
+                </li>
+
+                <li class="bg-info">
+                    <a asp-controller="odevogrenci" asp-action="Index">
+                        <i class="fi-air-play"></i> <span> Ödevler </span>
+                    </a>
+                </li>
+
+                <li class="bg-warning">
+                    <a asp-controller="sinavs1" asp-action="Index">
+                        <i class="fi-air-play"></i> <span> Sinavlar </span>
+                    </a>
+                </li>
+
+
+                <li class="bg-danger">
+                    <a asp-controller="Home" asp-action="Index">
+                        <i class="mdi mdi-logout"></i> <span> Güvenli Çıkış </span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+        <!-- Sidebar -->
+
+        <div class="clearfix"></div>
+
+    </div>
+    <!-- Sidebar -left -->
+
+</div>
+        <!-- Left Sidebar End -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+
+        <div class="content-page">
+
+            <!-- Top Bar Start -->
+           
+            <!-- Top Bar End -->
+            <!-- Start Page content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    @RenderBody()
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+            <footer class="footer text-right">
+                2020 © Boğaziçi Üniversitesi
+            </footer>
+
+        </div>
+
+
+        <!-- ============================================================== -->
+        <!-- End Right content here -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+    <!-- jQuery  -->
+    <script src="~/vertical/assets/js/jquery.min.js"></script>
+    <script src="~/vertical/assets/js/popper.min.js"></script>
+    <script src="~/vertical/assets/js/bootstrap.min.js"></script>
+    <script src="~/vertical/assets/js/metisMenu.min.js"></script>
+    <script src="~/vertical/assets/js/waves.js"></script>
+    <script src="~/vertical/assets/js/jquery.slimscroll.js"></script>
+
+    <!-- App js -->
+    <script src="~/vertical/assets/js/jquery.core.js"></script>
+    <script src="~/vertical/assets/js/jquery.app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿@model IEnumerable<egitim.Models.tumodevliste>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dersler.ders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Konular.konu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Odev.odevs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dersler.ders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konular.konu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Odev.odevs)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Odev.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Odev.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Odev.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

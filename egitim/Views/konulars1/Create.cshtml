@@ -1,0 +1,61 @@
+﻿@model egitim.Models.konular
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layoutogrenci.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>konular</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ders_id" class="control-label"></label>
+                <select asp-for="ders_id" class="form-control" asp-items="@(new SelectList(ViewBag.message,"id","ders"))"></select>
+                <span asp-validation-for="ders_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="konu" class="control-label"></label>
+                <input asp-for="konu" class="form-control" />
+                <span asp-validation-for="konu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="youtube" class="control-label"></label>
+                <input asp-for="youtube" class="form-control" />
+                <span asp-validation-for="youtube" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="video" class="control-label"></label>
+                <input asp-for="video" class="form-control" />
+                <span asp-validation-for="video" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dokuman" class="control-label"></label>
+                <input asp-for="dokuman" class="form-control" />
+                <span asp-validation-for="dokuman" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sinav" class="control-label"></label>
+                <input asp-for="sinav" class="form-control" />
+                <span asp-validation-for="sinav" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sira" class="control-label"></label>
+                <input asp-for="sira" class="form-control" />
+                <span asp-validation-for="sira" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

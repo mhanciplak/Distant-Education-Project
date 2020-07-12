@@ -1,0 +1,97 @@
+﻿@model egitim.Models.ogrenci
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ogrenci</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tcno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.tcno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.soyad)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.soyad)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.telefon)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.telefon)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dtarih)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dtarih)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.egitim)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.egitim)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.burs)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.burs)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.onay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.onay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.kayit)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.kayit)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sube)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sube)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ders_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ders_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.kul)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.kul)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sifre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sifre)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

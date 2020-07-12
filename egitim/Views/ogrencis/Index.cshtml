@@ -1,0 +1,134 @@
+﻿@model IEnumerable<egitim.Models.ogrenci>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tcno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.telefon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dtarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.egitim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.burs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.onay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kayit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sube)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ders_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.kul)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.sifre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tcno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.telefon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dtarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.egitim)
+            </td>
+            <td>
+               
+               
+                @if (item.burs == "0")
+                {
+                    <p>Burssuz</p>
+                }
+                else
+                {
+                    <p>Burslu</p>
+                }
+            </td>
+            <td>
+             
+                @if(item.onay=="0")
+                {
+                   <p>Onaysız</p>
+                }
+                else
+                {
+                    <p>Onaylı</p>
+                }
+            </td>
+            <td>
+                
+
+                @if (item.kayit == "0")
+                {
+                    <p>Kayıtsız</p>
+                }
+                else
+                {
+                    <p>Kayıtlı</p>
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sube)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ders_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.kul)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.sifre)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

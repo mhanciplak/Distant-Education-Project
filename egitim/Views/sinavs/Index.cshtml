@@ -1,0 +1,96 @@
+﻿@model IEnumerable<egitim.Models.sinavliste>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dersler.ders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Konular.konu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.test_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.soru_sira)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.soru)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.a)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.b)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.c)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.d)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.e)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sinav.cevap)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dersler.ders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konular.konu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.test_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.soru_sira)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.soru)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.a)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.b)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.c)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.d)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.e)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sinav.cevap)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Sinav.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Sinav.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Sinav.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

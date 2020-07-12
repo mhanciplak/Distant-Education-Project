@@ -1,0 +1,61 @@
+﻿@model egitim.Models.konular
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layoutogrenci.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>konular</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ders_id)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ders_id)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.konu)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.konu)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.youtube)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.youtube)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.video)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.video)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.dokuman)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.dokuman)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sinav)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sinav)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.sira)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.sira)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

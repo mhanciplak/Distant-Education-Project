@@ -1,0 +1,45 @@
+﻿@model IEnumerable<egitim.Models.odevliste>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layoutogrenci.cshtml";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Dersler.ders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Konular.konu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Odev.odevs)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dersler.ders)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Konular.konu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Odev.odevs)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Konular.id">Edit</a> |
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
